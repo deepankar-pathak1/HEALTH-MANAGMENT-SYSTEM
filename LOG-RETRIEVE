@@ -1,0 +1,88 @@
+# Code a program for Health Managment system
+
+import datetime
+def gettime():
+    return datetime.datetime.now()
+
+def take(k):
+    # k = int(input("Enter 1 for DEEPANKAR and 2 for ANSHU : "))
+    if (k==1):
+        a = int(input("Enter 1 for FOOD and 2 for DRINKS : "))
+        if (a==1):
+            value = input("Enter FOOD : ")
+            with open("deepankar-food.txt","a") as op:
+                op.write(str([str(gettime())]) + ": " + value)
+            print("Food Added")
+        elif (a==2):
+            value = input("Enter Drinks : ")
+            with open("deepankar-drinks.txt","a") as op:
+                op.write(str([str(gettime())])+ ": " + value)
+            print("Drinks Added")
+        else:
+            print("Enter Valid Details ")
+    if (k==2):
+        a = int(input("Enter 1 for FOOD and 2 for DRINKS : "))
+        if (a==1):
+            value = input("Enter FOOD : ")
+            with open("anshu-food.txt","a") as op:
+                op.write(str([str(gettime())]) + ":" + value)
+            print("Food Added")
+        elif (a==2):
+            value = input("Enter Drinks : ")
+            with open("anshu-drinks.txt","a") as op:
+                op.write(str([str(gettime())])+": "+ value)
+            print("Drinks Added")
+        else:
+            print("Enter Valid details")
+    # else:
+    #     print("Enter Valid Number ")
+
+def retrieve(k):
+    # k = int(input("Enter 1 FOR Deepankar and 2 FOR Anshu : "))
+    if (k==1):
+        a = int(input("Enter 1 for Food and 2 for Drinks : "))
+        if (a==1):
+            with open("deepankar-food.txt") as op:
+                for i in op:
+                    print(i,end=" ")
+        elif (a==2):
+            with open("deepankar-drinks.txt") as op:
+                for i in op:
+                    print(i, end=" ")
+        else:
+            print("Enter Valid Details")
+    elif (k==2):
+        a = int(input("Enter 1 for FOOD and 2 for DRINKS : "))
+        if (a==1):
+            with open("anshu-food.txt") as op:
+                for i in op:
+                    print(i,end=" ")
+        elif (a==2):
+            with open("anshu-drinks.txt") as op:
+                for i in op:
+                    print(i,end=" ")
+        else:
+            print("Enter Valid Details")
+
+
+print("*** WELCOME TO HEALTH MANAGMENT SYSTEM ***")
+
+b = int(input("Press 1 for LOG and 2 for RETRIEVE : "))
+
+if (b==1):
+    d = int(input("Press 1 FOR DEEPANKAR and 2 FOR ANSHU : "))
+    take(d)
+else:
+    d = int(input("Press 1 FOR DEEPANKAR and 2 FOR ANSHU : "))
+    retrieve(d)
+
+
+
+*** OUTPUT ***
+
+*** WELCOME TO HEALTH MANAGMENT SYSTEM ***
+Press 1 for LOG and 2 for RETRIEVE : 2
+Press 1 FOR DEEPANKAR and 2 FOR ANSHU : 1
+Enter 1 for Food and 2 for Drinks : 1
+['2020-09-16 13:15:20.090566']: ok['2020-09-16 13:20:08.071364']: BIRYANI 
+Process finished with exit code 0
